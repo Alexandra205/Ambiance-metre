@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Cal'Ambiance</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body class="accueil-page">
+
+<header>
+    <h1>Projet Ambiance-mètre</h1>
+
+    <nav>
+        <ul>
+            <li><a href="Accueil.html">Accueil</a></li>
+            <li><a href="DeroulementProjet.html">Déroulement du Projet</a></li>
+            <li><a href="GestionProjet.html">Gestion de projet</a></li>
+            <li><a href="DDRS.html">DDRS</a></li>
+            <li><a href="Documents.html">Documents</a></li>
+            <li><a href="Conclusion.html">Conclusion</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <section class="hero-accueil">
+
+        <div class="hero-top">
+
+            <span class="badge">
+                Projet Transdisciplinaire ENSC 2025
+            </span>
+
+            <img src="../img/logo.png"
+                 alt="Logo Cal'Ambiance"
+                 class="logo-top-droite">
+
+        </div>
+
+        <div class="hero-contenu">
+
+            <div class="hero-texte">
+
+                <h2>Cal'Ambiance</h2>
+
+                <p>
+                    Un système intelligent permettant de mesurer l’ambiance
+                    d'un endroit de l’ENSC en temps réel grâce à plusieurs
+                    capteurs : microphone, caméra et ruban LED interactif.
+                </p>
+
+                <p>
+                    L'objectif est de transformer des données physiques
+                    en une représentation simple, intuitive et visible instantanément.
+                </p>
+
+                <a href="DeroulementProjet.html" class="bouton">
+                    Découvrir le projet
+                </a>
+
+            </div>
+
+            <div class="hero-images">
+                <img src="../img/dessinmicrocont.png"
+                     alt="Microcontrôleur et ruban LED"
+                     class="image-arduino">
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="carte-accueil">
+
+        <h2>Présentation du projet</h2>
+
+        <p>
+            Dans les espaces collectifs comme un hall, une bibliothèque
+            ou une salle commune, l’ambiance varie constamment :
+            discussions, déplacements, activité des étudiants ou périodes de calme.
+        </p>
+
+        <p>
+            Le projet <strong>Cal'Ambiance</strong> a pour objectif
+            d'analyser automatiquement cette activité afin de la traduire
+            sous une forme visuelle simple et compréhensible.
+        </p>
+
+        <p>
+            Pour cela, nous avons développé un système embarqué utilisant
+            un microcontrôleur connecté à différents modules matériels.
+            Les informations collectées sont ensuite traitées puis affichées
+            grâce à un ruban LED et à une interface web.
+        </p>
+
+    </section>
+
+
+    <section class="carte-accueil">
+
+        <h2>Comment fonctionne le système ?</h2>
+
+        <div class="schema-systeme">
+
+            <div class="schema-box">
+                <span>🎤</span>
+                <p>Microphone</p>
+            </div>
+
+            <div class="schema-fleche">→</div>
+
+            <div class="schema-box">
+                <span>📷</span>
+                <p>Caméra</p>
+            </div>
+
+            <div class="schema-fleche">→</div>
+
+            <div class="schema-box">
+                <span>💻</span>
+                <p>Traitement</p>
+            </div>
+
+            <div class="schema-fleche">→</div>
+
+            <div class="schema-box">
+                <span>💡</span>
+                <p>Ruban LED</p>
+            </div>
+
+            <div class="schema-fleche">→</div>
+
+            <div class="schema-box">
+                <span>🌐</span>
+                <p>Site web</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="fonctionnement">
+
+        <div class="bloc-fonction">
+            <div class="icone-fonction">🎤</div>
+            <h3>Microphone</h3>
+
+            <p>
+                Il mesure l’intensité sonore présente dans le lieu.
+                Plus le bruit augmente, plus l’activité détectée est importante.
+            </p>
+        </div>
+
+        <div class="bloc-fonction">
+            <div class="icone-fonction">📷</div>
+            <h3>Caméra</h3>
+
+            <p>
+                Elle permet d'ajouter une information visuelle
+                en détectant notamment des mouvements dans l'espace observé.
+            </p>
+        </div>
+
+        <div class="bloc-fonction">
+            <div class="icone-fonction">💡</div>
+            <h3>Ruban LED</h3>
+
+            <p>
+                Il fournit un retour visuel immédiat :
+                différentes couleurs représentent l'état d'ambiance détecté.
+            </p>
+        </div>
+
+    </section>
+
+
+    <section class="carte-accueil">
+
+        <h2>Qu'est-ce que l'ambiance ?</h2>
+
+        <div class="bloc-ambiance">
+
+            <div>
+
+                <p>
+                    L’ambiance est une notion difficile à mesurer car elle
+                    reste en partie subjective : deux personnes peuvent avoir
+                    une perception différente d’un même lieu.
+                </p>
+
+                <p>
+                    Nous avons donc choisi de transformer cette notion
+                    en indicateurs mesurables :
+                </p>
+
+                <div class="badges-ambiance">
+                    <span>🔊 Niveau sonore</span>
+                    <span>👥 Activité détectée</span>
+                    <span>📷 Mouvement</span>
+                </div>
+
+                <p>
+                    Ces paramètres permettent d’obtenir une estimation
+                    quantitative d’un phénomène habituellement perçu
+                    uniquement de manière humaine.
+                </p>
+
+            </div>
+
+            <img src="../img/ambiance.png"
+                 alt="Illustration de l'ambiance"
+                 class="image-ambiance">
+
+        </div>
+
+    </section>
+
+
+    <section class="carte-accueil">
+
+        <h2>Objectifs du projet</h2>
+
+        <p>
+            Ce projet nous permet de travailler plusieurs domaines complémentaires
+            tout en construisant un prototype concret et interactif.
+        </p>
+
+        <div class="competences-grid">
+
+            <div class="competence-card">
+                <span>💻</span>
+                <p>Programmation embarquée et MicroPython</p>
+            </div>
+
+            <div class="competence-card">
+                <span>🎤</span>
+                <p>Traitement du signal sonore</p>
+            </div>
+
+            <div class="competence-card">
+                <span>📡</span>
+                <p>Capteurs et acquisition de données</p>
+            </div>
+
+            <div class="competence-card">
+                <span>🌐</span>
+                <p>Développement web</p>
+            </div>
+
+            <div class="competence-card">
+                <span>🤝</span>
+                <p>Gestion de projet et travail en équipe</p>
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+<footer>
+    <p>Projet Transdisciplinaire ENSC 2025-2026 <br> réalisé par Clotilde Doucet, Juliette Lermusieaux, Emma Rougeron et Alexandra Ruiz</p>
+</footer>
+
+</body>
+</html>

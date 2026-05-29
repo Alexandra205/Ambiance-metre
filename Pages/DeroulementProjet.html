@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+<meta charset="UTF-8">
+<title>Déroulement du Projet - Cal'Ambiance</title>
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Projet Ambiance-mètre</h1>
+
+<nav>
+<ul>
+<li><a href="Accueil.html">Accueil</a></li>
+<li><a href="DeroulementProjet.html">Déroulement du Projet</a></li>
+<li><a href="GestionProjet.html">Gestion de projet</a></li>
+<li><a href="DDRS.html">DDRS</a></li>
+<li><a href="Documents.html">Documents</a></li>
+<li><a href="Conclusion.html">Conclusion</a></li>
+</ul>
+</nav>
+</header>
+
+<main>
+
+<section class="avancement">
+
+<h2>Déroulement du projet</h2>
+
+<p class="avancement-intro">
+Cliquez sur une étape afin d’afficher les détails du développement du projet Cal'Ambiance.
+</p>
+
+<div class="timeline-scroll">
+<div class="timeline-track" id="timeline-track">
+<div class="timeline-line"></div>
+</div>
+</div>
+
+<div class="detail-card" id="detail-card">
+
+<div class="detail-text">
+
+<div class="detail-badge" id="detail-num">
+Étape 1
+</div>
+
+<div class="detail-title" id="detail-title"></div>
+
+<div id="detail-desc"></div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<footer>
+    <p>Projet Transdisciplinaire ENSC 2025-2026 <br> réalisé par Clotilde Doucet, Juliette Lermusieaux, Emma Rougeron et Alexandra Ruiz</p>
+</footer>
+
+<script>
+
+const steps = [
+
+{
+label:"Prise en main",
+full:"Étape 1 : Prise en main du microcontrôleur",
+desc:`
+<div class="visuel-ligne">
+
+<div class="bloc-section bloc-section-vert">
+<h4>Objectif</h4>
+<p>
+Découvrir le Raspberry Pi Pico, l’environnement MicroPython
+et les composants électroniques utilisés pour le projet.
+</p>
+</div>
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Premiers essais</h4>
+
+<div class="badges-tech">
+<span>GPIO</span>
+<span>LED</span>
+<span>MicroPython</span>
+<span>Entrées / sorties</span>
+</div>
+
+<ul>
+<li>Découverte du fonctionnement du microcontrôleur</li>
+<li>Tests des broches GPIO</li>
+<li>Connexion d’une LED sur une broche</li>
+<li>Programme d’allumage et d’extinction en boucle</li>
+</ul>
+</div>
+
+</div>
+
+<img src="../img/placin.jpg" alt="Prise en main du matériel" class="image-etape">
+`
+},
+
+{
+label:"Ruban LED",
+full:"Étape 2 : Allumage et contrôle du ruban LED",
+desc:`
+<div class="bloc-section bloc-section-vert">
+<h4>Visualisation de l’ambiance</h4>
+
+<p>
+Le ruban LED est l’élément qui permet de représenter l’ambiance détectée
+de façon simple et visible.
+</p>
+
+<div class="couleurs-led">
+<div class="couleur rouge">Ambiance calme</div>
+<div class="couleur jaune">Ambiance modérée</div>
+<div class="couleur vert">Ambiance forte</div>
+</div>
+</div>
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Fonctionnalités testées</h4>
+
+<ul>
+<li>Allumage complet du ruban</li>
+<li>Alternance des couleurs rouge, vert et bleu</li>
+<li>Création de zones colorées</li>
+<li>Utilisation de fonctions pour contrôler des portions du ruban</li>
+</ul>
+</div>
+
+<img src="../img/bandeled.png" alt="Ruban LED" class="image-etape">
+`
+},
+
+{
+label:"Traitement sonore",
+full:"Étape 3 : Mesure et traitement du son",
+desc:`
+<div class="bloc-section bloc-section-jaune">
+<h4>Traitement du signal sonore</h4>
+
+<div class="schema-flux">
+<span>Son capté</span>
+<div class="fleche">→</div>
+<span>Valeur numérique</span>
+<div class="fleche">→</div>
+<span>Tension</span>
+<div class="fleche">→</div>
+<span>Décibels estimés</span>
+<div class="fleche">→</div>
+<span>Niveau d’ambiance</span>
+</div>
+</div>
+
+<div class="bloc-section bloc-section-vert">
+<h4>Tests réalisés</h4>
+
+<ul>
+<li>Mesure en situation calme</li>
+<li>Mesure avec discussions</li>
+<li>Tests avec musique</li>
+<li>Comparaison avec une application de mesure sonore</li>
+<li>Définition des seuils d’ambiance</li>
+</ul>
+</div>
+
+<img src="../img/micro.png" alt="Microphone" class="image-etape">
+`
+},
+
+{
+label:"Prototype V1",
+full:"Étape 4 : Couplage son + LED",
+desc:`
+<div class="bloc-section bloc-section-vert">
+<h4>Principe</h4>
+
+<p>
+Le niveau sonore mesuré contrôle directement le ruban LED
+afin d’afficher l’ambiance du hall en temps réel.
+</p>
+</div>
+
+<div class="couleurs-led">
+<div class="couleur rouge">Zone calme</div>
+<div class="couleur jaune">Zone modérée</div>
+<div class="couleur vert">Zone forte</div>
+</div>
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Optimisations</h4>
+
+<ul>
+<li>Première version avec des conditions successives</li>
+<li>Affichage par blocs de LEDs</li>
+<li>Passage à un affichage plus progressif</li>
+<li>Ajout d’une LED supplémentaire tous les 1,5 dB environ</li>
+<li>Affichage plus fluide et plus lisible</li>
+</ul>
+</div>
+
+<img src="../img/echelle.png" alt="Échelle ambiance LED" class="image-etape">
+`
+},
+
+{
+label:"Caméra",
+full:"Étape 5 : Branchements et bibliothèques caméra",
+desc:`
+<div class="visuel-ligne">
+
+<div class="bloc-section bloc-section-vert">
+<h4>Branchements caméra / Pico</h4>
+
+<table class="table-branchements">
+<tr><th>Caméra</th><th>Pico</th></tr>
+<tr><td>SDA</td><td>GP4</td></tr>
+<tr><td>SCL</td><td>GP5</td></tr>
+<tr><td>VCC</td><td>3.3V</td></tr>
+<tr><td>GND</td><td>GND</td></tr>
+<tr><td>CS</td><td>GP17</td></tr>
+<tr><td>MISO</td><td>GP16</td></tr>
+<tr><td>SCK</td><td>GP18</td></tr>
+</table>
+</div>
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Bibliothèques téléchargées</h4>
+
+<div class="badges-tech">
+<span>ov2640.py</span>
+<span>ov2640_constants.py</span>
+<span>ov2640_hires_constants.py</span>
+<span>ov2640_lores_constants.py</span>
+</div>
+
+<p>
+Ces bibliothèques permettent de préparer la communication avec la caméra OV2640
+et de gérer différents paramètres de résolution.
+</p>
+</div>
+
+</div>
+
+<img src="../img/cam.png" alt="Caméra OV2640 branchée" class="image-etape">
+`
+},
+
+{
+label:"Tests caméra",
+full:"Étape 6 : Tests et communication caméra",
+desc:`
+<div class="bloc-section bloc-section-vert">
+<h4>Tests réalisés</h4>
+
+<ul>
+<li>Vérification de la détection de la caméra via I2C</li>
+<li>Tests de communication SPI</li>
+<li>Essais de récupération d’images</li>
+<li>Observation des réactions du système</li>
+<li>Tests du ruban LED pendant les acquisitions</li>
+</ul>
+</div>
+
+<div class="galerie-tests">
+<img src="../img/testcam1.png" alt="Premier test caméra">
+<img src="../img/testcam4.png" alt="Deuxième test caméra">
+</div>
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Objectif</h4>
+
+<p>
+Ces tests avaient pour but de vérifier que la caméra était correctement branchée
+et que le microcontrôleur pouvait communiquer avec elle.
+</p>
+</div>
+`
+},
+
+{
+label:"Limites caméra",
+full:"Étape 7 : Limites du traitement d’image",
+desc:`
+<div class="bloc-section bloc-section-rouge">
+<h4>Problèmes rencontrés</h4>
+
+<ul>
+<li>Pas de vraies images exploitables récupérées en temps réel</li>
+<li>Flux vidéo difficile à exploiter</li>
+<li>Utilisation de l’I2C principalement pour vérifier la présence de la caméra</li>
+<li>Simulation de mouvement utilisée au lieu d’un traitement réel d’image</li>
+</ul>
+</div>
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Limites matérielles</h4>
+
+<ul>
+<li>Mémoire limitée du microcontrôleur</li>
+<li>Puissance insuffisante pour du traitement vidéo</li>
+<li>Temps de calcul trop importants</li>
+<li>Difficulté à traiter des images complètes en temps réel</li>
+</ul>
+</div>
+
+<img src="../img/limitecam.png" alt="Limites caméra" class="image-etape">
+`
+},
+
+{
+label:"Site web",
+full:"Étape 8 : Développement du site web du micro-contrôleur",
+desc:`
+<div class="bloc-section bloc-section-vert">
+<h4>Objectif du site</h4>
+
+<p>
+Exploiter et afficher l’ambiance détectée en temps réel,
+valoriser les données collectées par les capteurs
+et présenter le fonctionnement du projet Cal'Ambiance.
+</p>
+</div>
+
+<div class="visuel-ligne">
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Sous-étape 1 : Maquette</h4>
+
+<p>
+Une première maquette a été réalisée afin d’imaginer l’organisation des pages,
+l’affichage des résultats et l’expérience utilisateur.
+</p>
+
+<ul>
+<li>Choix des couleurs</li>
+<li>Organisation du menu</li>
+<li>Structure des pages</li>
+<li>Répartition des contenus</li>
+<li>Visualisation de l’ambiance</li>
+</ul>
+</div>
+
+<div class="bloc-section bloc-section-vert">
+<h4>Sous-étape 2 : Site codé</h4>
+
+<p>
+Le site a ensuite été codé en HTML, CSS et JavaScript afin de présenter le projet
+et de proposer une navigation claire.
+</p>
+
+<ul>
+<li>Création des pages principales</li>
+<li>Ajout d’une frise interactive</li>
+<li>Affichage dynamique des informations</li>
+<li>Ajout des documents et des conclusions</li>
+<li>Navigation entre les onglets</li>
+</ul>
+</div>
+
+</div>
+
+<div class="bloc-section">
+<h4>Fonctionnalités</h4>
+
+<div class="badges-tech">
+<span>Temps réel</span>
+<span>Interface web</span>
+<span>Visualisation</span>
+<span>Navigation</span>
+<span>Résultats</span>
+</div>
+</div>
+
+<img src="../img/maquette.png" alt="Maquette du site web" class="image-etape">
+`
+},
+
+{
+label:"Tests utilisateurs",
+full:"Étape 9 : Tests utilisateurs et analyse",
+desc:`
+<div class="bloc-section bloc-section-vert">
+<h4>Méthodologie</h4>
+
+<ul>
+<li>Environ 20 personnes interrogées</li>
+<li>Observation directe pendant l’utilisation du dispositif</li>
+<li>Questionnaire utilisateur à la fin du test</li>
+<li>Analyse des commentaires et des difficultés rencontrées</li>
+<li>Observation du temps d’exécution et des perturbations extérieures</li>
+</ul>
+</div>
+
+<div class="tests-layout">
+
+<div class="bloc-section bloc-section-jaune">
+<h4>Protocole</h4>
+
+<ul>
+<li>Connexion au Wi-Fi du microcontrôleur</li>
+<li>Accès au site web du projet</li>
+<li>Parler et observer les modifications sur la bande LED</li>
+<li>Mettre une musique et observer les modifications sur le site web</li>
+<li>Répondre au questionnaire utilisateur</li>
+</ul>
+</div>
+
+<div class="tests-images">
+<img src="../img/testutiljoelle.png" alt="Test utilisateur avec prototype" class="image-principale">
+<img src="../img/testutil.png" alt="Test du site sur téléphone" class="image-secondaire-test">
+</div>
+
+</div>
+
+<div class="stats-grid">
+<div class="stat-box"><img src="../img/indique.png" alt="indique" class="image-principale"></div>
+<div class="stat-box"><img src="../img/Facilsite.png" alt="facilité accès site" class="image-principale"></div>
+<div class="stat-box"><img src="../img/seuils.png" alt="seuils" class="image-principale"></div>
+<div class="stat-box"><img src="../img/comprehension.png" alt="compréhension du site" class="image-principale"></div>
+<div class="stat-box"><img src="../img/utilite.png" alt="utilité projet" class="image-principale"></div>
+</div>
+
+<div class="bloc-section bloc-section-rouge">
+<h4>Points à améliorer</h4>
+
+<ul>
+<li>Connexion parfois instable au site web</li>
+<li>Délai entre l’affichage du ruban LED et celui du site web</li>
+<li>Programmation de la caméra de manière fiable</li>
+</ul>
+</div>
+`
+},
+
+{
+label:"Finalisation",
+full:"Étape 10 : Ajustements et finalisation",
+desc:`
+<div class="bloc-section bloc-section-jaune">
+<h4>Derniers ajustements</h4>
+
+<div class="badges-tech">
+<span>Calibration</span>
+<span>Site web</span>
+<span>Prototype</span>
+<span>Tests</span>
+<span>Soutenance</span>
+</div>
+</div>
+
+<div class="bloc-section bloc-section-vert">
+<h4>Objectif final</h4>
+
+<p>
+Obtenir un prototype stable, démonstratif et cohérent avant la soutenance finale.
+</p>
+</div>
+
+<div class="bloc-section">
+<h4>Améliorations réalisées</h4>
+
+<ul>
+<li>Amélioration de la cohérence des seuils</li>
+<li>Correction de problèmes visibles sur le site</li>
+<li>Préparation de la démonstration finale</li>
+<li>Organisation des contenus pour la présentation</li>
+</ul>
+</div>
+
+<img src="../img/travail.png" alt="Prototype final" class="image-etape">
+`
+}
+
+];
+
+const track = document.getElementById("timeline-track");
+let activeIdx = null;
+
+steps.forEach((s, i) => {
+
+const div = document.createElement("div");
+div.className = "step";
+
+div.innerHTML = `
+<div class="step-dot">${i + 1}</div>
+<div class="step-label">${s.label}</div>
+`;
+
+div.addEventListener("click", () => {
+
+const card = document.getElementById("detail-card");
+
+if(activeIdx === i){
+activeIdx = null;
+div.classList.remove("active");
+card.classList.remove("visible");
+return;
+}
+
+document.querySelectorAll(".step").forEach(el => el.classList.remove("active"));
+
+activeIdx = i;
+div.classList.add("active");
+
+document.getElementById("detail-num").textContent = `Étape ${i + 1}`;
+document.getElementById("detail-title").textContent = s.full;
+document.getElementById("detail-desc").innerHTML = s.desc;
+
+card.classList.add("visible");
+
+card.scrollIntoView({
+behavior:"smooth",
+block:"start"
+});
+
+});
+
+track.appendChild(div);
+
+});
+
+</script>
+
+</body>
+</html>
